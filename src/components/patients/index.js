@@ -45,6 +45,10 @@ const Patients = (props) => {
         fire
             .auth()
             .signInWithEmailAndPassword(email, password)
+            .then(() => {
+
+                history.push('/patientsPortal')
+            })
             .catch((err) => {
                 switch (err.code) {
                     case "auth/invalid-email":
@@ -119,7 +123,7 @@ const Patients = (props) => {
                             additional content. This content is a little bit longer.
       </Card.Text>
 
-                        {/* * <Login
+                        <Login
                             email={email}
                             setEmail={setEmail}
                             password={password}
@@ -130,25 +134,9 @@ const Patients = (props) => {
                             setHasAccount={setHasAccount}
                             emailError={emailError}
                             passwordError={passwordError}
-                        />**/}
+                        />
 
-                        {
-                            user ? (
-                                <PatientsPortal handleLogout={handleLogout} />
-                            ) : (
-                                    <Login
-                                        email={email}
-                                        setEmail={setEmail}
-                                        password={password}
-                                        setPassword={setPassword}
-                                        handleLogin={handleLogin}
-                                        handleSignup={handleSignup}
-                                        hasAccount={hasAccount}
-                                        setHasAccount={setHasAccount}
-                                        emailError={emailError}
-                                        passwordError={passwordError}
-                                    />
-                                )}
+
 
 
                     </Card.Body>

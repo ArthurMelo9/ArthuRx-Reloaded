@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Navbar, Nav, Form, FormControl, Button, Card } from 'react-bootstrap';
+import { Navbar, Nav, Card, Container } from 'react-bootstrap';
 import Table from './Table.js'
 import Input from './Input.js'
 import './todolist.css'
@@ -79,42 +79,40 @@ class TodoList extends Component {
         }
         this.setState({ List: tempList, isEdit: false, EditVal: '' })
     }
+
     render() {
         const { List, InputVal } = this.state
         return (
             <div>
-                <Navbar bg="primary" variant="dark">
-                    <Navbar.Brand>ArthuRx</Navbar.Brand>
-                    <Nav className="mr-auto">
-                        <Nav.Link href="/">Home</Nav.Link>
-                        <Nav.Link href="/contactUs">Contact Us</Nav.Link>
-                        <Nav.Link href="/aboutUs">About Us</Nav.Link>
-                        <Nav.Link href="/services">Services</Nav.Link>
-                        <Nav.Link href="/signUp">Sign Up</Nav.Link>
-                    </Nav>
-                    <Form inline>
-                        <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                        <Button variant="outline-light">Search</Button>
-                    </Form>
-                </Navbar>
-                <div className="ListItems">
-                    <h3 className="heading">To-Do-List</h3>
-                    <Input
-                        InputVal={InputVal}
-                        handleAddBtn={this.handleAddBtn}
-                        handleInputChange={this.handleInputChange}
-                        handleKeyPress={this.handleKeyPress}
-                    />
-                    <Table list={List} handleDelete={this.handleDelete} handleEdit={this.handleEditBtn} isEdit={this.state.isEdit} >
+                <Container fluid>
+                    <Navbar bg="dark" variant="dark">
+                        <Navbar.Brand href="#home">ArthuRx</Navbar.Brand>
+                        <Nav className="mr-auto">
+                            <Nav.Link href="/">Home</Nav.Link>
+                            <Nav.Link href="/aboutUs">About Us</Nav.Link>
+                            <Nav.Link href="/contactUs">Contact Us</Nav.Link>
+                            <Nav.Link href="/signUp">Sign Up</Nav.Link>
+                        </Nav>
+                    </Navbar>
+                    <div className="ListItems">
+                        <h3 className="heading">To-Do-List</h3>
                         <Input
-                            InputVal={this.state.EditVal}
-                            handleAddBtn={this.AddEditedValue}
-                            handleInputChange={this.handleEditChange}
-                            placeholder='edit'
+                            InputVal={InputVal}
+                            handleAddBtn={this.handleAddBtn}
+                            handleInputChange={this.handleInputChange}
+                            handleKeyPress={this.handleKeyPress}
                         />
-                    </Table>
-                </div>
-                <Card.Link href="/doctorsPortal">Back to dooctors portal</Card.Link>
+                        <Table list={List} handleDelete={this.handleDelete} handleEdit={this.handleEditBtn} isEdit={this.state.isEdit} >
+                            <Input
+                                InputVal={this.state.EditVal}
+                                handleAddBtn={this.AddEditedValue}
+                                handleInputChange={this.handleEditChange}
+                                placeholder='edit'
+                            />
+                        </Table>
+                    </div>
+                    <Card.Link href="/doctorsPortal">Back to dooctors portal</Card.Link>
+                </Container>
             </div>
         )
     }

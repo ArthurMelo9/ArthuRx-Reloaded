@@ -1,9 +1,10 @@
 import React from 'react';
-import { Navbar, Nav, Form, FormControl, Button, Card, CardDeck, Container } from 'react-bootstrap';
+import { Navbar, Nav, Card, CardDeck, Container } from 'react-bootstrap';
 import Comm from '../home/images/comm.jpg';
 import Diagnose from '../home/images/diagnose.jpg'
 import Tele from '../home/images/tele.png';
 import { useHistory } from 'react-router-dom';
+import fire from './fire';
 
 
 /**
@@ -13,6 +14,12 @@ import { useHistory } from 'react-router-dom';
 
 const PatientsPortal = (props) => {
     const history = useHistory()
+
+    const handleLogout = () => {
+        fire.auth().signOut()
+            .then(() => { history.push('/patients') })
+    };
+
     const navigateTo = (path) => {
         return (
             (e) => {
@@ -88,6 +95,7 @@ const PatientsPortal = (props) => {
                     </Card>
 
                 </CardDeck>
+                <button onClick={handleLogout} >Logout</button>
             </Container>
         </div>
     )

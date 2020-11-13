@@ -83,9 +83,7 @@ const Doctors = (props) => {
 
     };
 
-    const handleLogout = () => {
-        fire.auth().signOut();
-    };
+   
 
     //a listener to check if user exists
     const authListener = () => {
