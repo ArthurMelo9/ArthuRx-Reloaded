@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Nav, Card, CardDeck, Container } from 'react-bootstrap';
+import { Navbar, Nav, Card, CardDeck, Container, Button } from 'react-bootstrap';
 import Comm from '../home/images/comm.jpg';
 import Diagnose from '../home/images/diagnose.jpg'
 import Tele from '../home/images/tele.png';
@@ -42,9 +42,9 @@ const PatientsPortal = (props) => {
                         <Nav.Link onClick={navigateTo("/signUp")}>Sign Up</Nav.Link>
                     </Nav>
                 </Navbar>
-            PatientsPortal
+                <h3>Patient sPortal</h3>
 
-            <CardDeck>
+                <CardDeck>
                     <Card>
                         <Card.Img variant="top" src={Comm} />
                         <Card.Body>
@@ -95,7 +95,7 @@ const PatientsPortal = (props) => {
                     </Card>
 
                 </CardDeck>
-                <button onClick={handleLogout} >Logout</button>
+                <Button variant="dark" onClick={handleLogout} >Logout</Button>
             </Container>
         </div>
     )

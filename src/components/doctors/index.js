@@ -83,7 +83,7 @@ const Doctors = (props) => {
 
     };
 
-   
+
 
     //a listener to check if user exists
     const authListener = () => {
@@ -101,7 +101,7 @@ const Doctors = (props) => {
         authListener();
     }, []);
     return (
-        <div>Doctors
+        <div>
             <Container fluid>
                 <Navbar bg="dark" variant="dark">
                     <Navbar.Brand href="#home">ArthuRx</Navbar.Brand>
@@ -115,10 +115,9 @@ const Doctors = (props) => {
                 <Card>
                     <Card.Img variant="top" src={Doctor} />
                     <Card.Body>
-                        <Card.Title>Card title</Card.Title>
+                        <Card.Title>Doctors' login</Card.Title>
                         <Card.Text>
-                            This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.
+                            Hello Doctor! Welcome to ArthuRx! Please login to access your portal.
       </Card.Text>
 
                         <Login

@@ -8,7 +8,76 @@ import { Navbar, Nav, Form, FormControl, Button, Container } from 'react-bootstr
 * @function SignUp
 **/
 
-const emailRegex = RegExp(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/);
+const SignUp = (props) => {
+
+    const {
+        email,
+        setEmail,
+        password,
+        setPassword,
+        handleLogin,
+        handleSignup,
+        hasAccount,
+        setHasAccount,
+        emailError,
+        passwordError,
+    } = props;
+    return (
+
+        <Container fluid>
+            <Navbar bg="dark" variant="dark">
+                <Navbar.Brand href="#home">ArthuRx</Navbar.Brand>
+                <Nav className="mr-auto">
+                    <Nav.Link href="/">Home</Nav.Link>
+                    <Nav.Link href="/aboutUs">About Us</Nav.Link>
+                    <Nav.Link href="/contactUs">Contact Us</Nav.Link>
+                    <Nav.Link href="/signUp">Sign Up</Nav.Link>
+                </Nav>
+            </Navbar>
+            <section className="login">
+                <div className="loginContainer">
+                    <label>Username</label>
+                    <input
+                        type="text"
+                        autoFocus
+                        required
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)} />
+                    <p className="errorMsg">{emailError} </p>
+                    <label>Password</label>
+                    <input
+                        type="password"
+                        autoFocus
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)} />
+                    <p className="errorMsg" >{passwordError} </p>
+                    <div className="btnContainer" >
+                        {hasAccount ? (
+                            <>
+                                <button className="signin" onClick={handleLogin}   >Sign in</button>
+                                <p>Don't have an acount?
+                                <span onClick={() => setHasAccount(!hasAccount)} >Sign up</span>
+                                </p>
+                            </>
+                        ) : (
+                                <>
+                                    <button className="signin" onClick={handleSignup} >Sign up</button>
+                                    <p>Have an account?
+                                     <span onClick={() => setHasAccount(!hasAccount)}>Sign in</span>
+                                    </p>
+                                </>
+                            )}
+                    </div>
+                </div>
+            </section>
+        </Container>
+    )
+
+}
+
+export default SignUp;
+
+/*const emailRegex = RegExp(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/);
 
 const formValid = ({ formErrors, ...rest }) => {
     let valid = true;
@@ -179,4 +248,4 @@ class SignUp extends Component {
     }
 }
 
-export default SignUp;
+export default SignUp;*/

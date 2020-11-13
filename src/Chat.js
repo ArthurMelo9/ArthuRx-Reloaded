@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import io from 'socket.io-client'
 import TextField from '@material-ui/core/TextField'
-import { Navbar, Nav, Container } from 'react-bootstrap';
+import { Navbar, Nav, Container, Button } from 'react-bootstrap';
 import './chat.css';
 import { useHistory } from 'react-router-dom';
 /**
@@ -80,7 +80,7 @@ const Chat = (props) => {
                                 variant='outlined'
                                 label='Message' />
                         </div>
-                        <button onClick={onMessageSubmit}>Send message</button>
+                        <Button variant="dark" onClick={onMessageSubmit}>Send message</Button>
                     </form>
                     <div className='render-chat'>
                         <h1>Chat Log</h1>

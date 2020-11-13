@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import fire from './fire'
 import PatientsPortal from './PatientsPortal';
-import { Navbar, Nav, Container, Card } from 'react-bootstrap'
+import { Navbar, Nav, Container, Card, Button } from 'react-bootstrap'
 import Login from './Login';
 import Cartoon from '../home/images/cartoon.jpg'
 
@@ -83,9 +83,7 @@ const Patients = (props) => {
 
     };
 
-    const handleLogout = () => {
-        fire.auth().signOut();
-    };
+
 
     //a listener to check if user exists
     const authListener = () => {
@@ -103,7 +101,7 @@ const Patients = (props) => {
         authListener();
     }, []);
     return (
-        <div>Patients
+        <div>
             <Container fluid>
                 <Navbar bg="dark" variant="dark">
                     <Navbar.Brand href="#home">ArthuRx</Navbar.Brand>
@@ -116,11 +114,12 @@ const Patients = (props) => {
                 </Navbar>
                 <Card>
                     <Card.Img variant="top" src={Cartoon} />
+
                     <Card.Body>
-                        <Card.Title>Card title</Card.Title>
+                        <Card.Title>Patients' login</Card.Title>
                         <Card.Text>
-                            This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.
+                            Hello, welcome to ArthuRx! We will make sure you don't leave here
+                            the same. Kindly log in to connect with your doctor.
       </Card.Text>
 
                         <Login
@@ -140,10 +139,12 @@ const Patients = (props) => {
 
 
                     </Card.Body>
+                    <Button variant="dark" href="/freeService" >Click here for a free BMI check</Button>
                     <Card.Footer>
                         <small className="text-muted">Our virtual consultation is top-notch!</small>
                     </Card.Footer>
                 </Card>
+
             </Container>
         </div>
     )

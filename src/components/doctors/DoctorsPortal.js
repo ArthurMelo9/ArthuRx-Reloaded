@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, ListGroup, ListGroupItem, Row, Col, Table } from 'react-bootstrap'
+import { Card, ListGroup, ListGroupItem, Row, Col, Table, Button } from 'react-bootstrap'
 import Doctor from '../home/images/telemedicine-760.jpg'
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
@@ -40,8 +40,8 @@ const DoctorsPortal = () => {
                     </Nav>
                 </Navbar>
 
-            DoctorsPortal
-           <Row>
+                <h3>Doctors Portal</h3>
+                <Row>
                     <Col>
                         <Card style={{ width: '18rem' }}>
                             <Card.Img variant="top" src={Doctor} />
@@ -64,14 +64,14 @@ const DoctorsPortal = () => {
                                 <Card.Link href="/to-do-list">To-do-List</Card.Link>
                                 <hr />
 
-                                <button onClick={handleLogout} >Logout</button>
+                                <Button variant="dark" onClick={handleLogout} >Logout</Button>
                             </Card.Body>
                         </Card>
                     </Col>
                     <Col>
                         <br />
                         <br />
-                        Appointments
+                        <h4>Appointment Schedule</h4>
                         <hr />
                         <Table striped bordered hover variant="dark">
                             <thead>
@@ -87,10 +87,10 @@ const DoctorsPortal = () => {
                             <tbody>
                                 <tr>
                                     <td>1</td>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
+                                    <td>Jerry John</td>
+                                    <td>Rawlings</td>
                                     <td>Male</td>
-                                    <td>35</td>
+                                    <td>73</td>
                                     <td>14th November, 2020</td>
 
                                 </tr>

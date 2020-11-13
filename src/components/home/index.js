@@ -43,7 +43,7 @@ const Home = (props) => {
                 <Row>
                     <Col>
                         <br />
-                        Welcome to ArthuRx
+                        <h3>Welcome to ArthuRx</h3>
                         <hr />
                         <Carousel>
                             <Carousel.Item>
@@ -53,10 +53,12 @@ const Home = (props) => {
                                     alt="First slide"
                                 />
                                 <Carousel.Caption>
-                                    <h3>First slide label</h3>
-                                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                    <h3>Experience a virtual consultation with our doctors</h3>
+                                    <p>This cutting-edge technology allows you to face-time with doctors</p>
                                 </Carousel.Caption>
+
                             </Carousel.Item>
+
                             <Carousel.Item>
                                 <img
                                     className="d-block w-100"
@@ -65,8 +67,8 @@ const Home = (props) => {
                                 />
 
                                 <Carousel.Caption>
-                                    <h3>Second slide label</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <h3>Any complaints? </h3>
+                                    <p>Text us. Our on-demand doctors are always online to respond to you!</p>
                                 </Carousel.Caption>
                             </Carousel.Item>
                             <Carousel.Item>
@@ -77,8 +79,8 @@ const Home = (props) => {
                                 />
 
                                 <Carousel.Caption>
-                                    <h3>Third slide label</h3>
-                                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                                    <h3>Meet our doctors in person</h3>
+                                    <p>Book an appointment with our consultants now.</p>
                                 </Carousel.Caption>
                             </Carousel.Item>
                         </Carousel>
@@ -86,7 +88,7 @@ const Home = (props) => {
 
                     <Col>
                         <br />
-                        Tips Corner
+                        <h4>Tips corner</h4>
                         <hr />
                         <Media>
                             <img
