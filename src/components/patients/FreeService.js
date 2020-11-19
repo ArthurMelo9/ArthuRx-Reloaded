@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Input from './BMI/Input';
 import Buttons from './BMI/Button';
-import { InputGroup, FormControl, Badge, Container, Row, Col, Card, Button, Navbar, Nav } from 'react-bootstrap'
+import { Badge, Container, Row, Col, Card, Button, Navbar, Nav } from 'react-bootstrap'
 import Pic from '../home/images/bmi.jpg';
 import { useHistory } from 'react-router-dom';
 

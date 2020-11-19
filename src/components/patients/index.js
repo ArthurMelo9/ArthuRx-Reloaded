@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import fire from './fire'
-import PatientsPortal from './PatientsPortal';
+
 import { Navbar, Nav, Container, Card, Button } from 'react-bootstrap'
 import Login from './Login';
 import Cartoon from '../home/images/cartoon.jpg'
@@ -60,7 +60,7 @@ const Patients = (props) => {
                         setPasswordError(err.message);
                         break;
                 }
-                window.location = "patientsPortal";
+
             });
     };
 
