@@ -57,7 +57,7 @@ const DoctorsPortal = () => {
                                 <ListGroupItem>Vestibulum at eros</ListGroupItem>
                             </ListGroup>
                             <Card.Body>
-                                <Card.Link href="/chat">Chat with patient</Card.Link>
+                                <Card.Link href="/join">Chat with patient</Card.Link>
                                 <hr />
                                 <Card.Link href="#">Appointments</Card.Link>
                                 <hr />

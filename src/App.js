@@ -15,8 +15,11 @@ import Patients from './components/patients';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import DoctorsPortal from './components/doctors/DoctorsPortal';
 import PatientsPortal from './components/patients/PatientsPortal';
-import Chat from './Chat';
+/*import Chat from './Chat';*/
+
 import TodoList from './components/doctors/ToDoList/ToDoList';
+import Chat from './components/chatRoom/components/Chat/Chat';
+import SignIn from './components/chatRoom/components/Join/Join';
 
 function App() {
   return (
@@ -35,6 +38,7 @@ function App() {
           <Route path="/patientsPortal" exact component={PatientsPortal} />
           <Route path="/freeService" exact component={FreeService} />
           <Route path="/chat" exact component={Chat} />
+          <Route path="/join" exact component={SignIn} />
           <Route path="/to-do-list" exact component={TodoList} />
         </Switch>
       </Router>
